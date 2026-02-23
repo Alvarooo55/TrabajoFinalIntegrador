@@ -1,0 +1,22 @@
+# Dependencies
+**/node_modules/
+
+# Build outputs
+**/dist/
+**/.angular/
+**/coverage/
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Environment files
+backend/.env
+frontend-react/.env
+frontend-angular/.env
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h4 mb-0 text-primary">Detalle de producto</h1>
+  <a class="btn btn-outline-secondary" routerLink="/productos">Volver</a>
+</div>
+
+<div *ngIf="loading" class="text-center py-4">
+  <div class="spinner-border" role="status"></div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!loading && product" class="card border-0 shadow-sm">
+  <button class="btn p-0 border-0 bg-transparent" (click)="openPreview(resolveImage(product))">
+    <img
+      [src]="resolveImage(product)"
+      [alt]="product.nombre"
+      (error)="onImageError($event)"
+      class="card-img-top"
+      style="max-height: 140px; object-fit: contain; object-position: center; background: #f8f9fa; padding: 8px; image-rendering: pixelated"
+    />
+  </button>
+  <div class="card-body">
+    <h2 class="h5 mb-3 text-primary">{{ product.nombre }}</h2>
+    <p class="mb-3">{{ product.descripcion }}</p>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <strong>Categoría:</strong>
+        <span class="badge text-bg-info text-capitalize ms-1">{{ product.categoria }}</span>
+      </div>
+      <div class="col-md-4"><strong>Precio:</strong> {{ product.precio | currency : 'EUR' }}</div>
+      <div class="col-md-4"><strong>Stock:</strong> {{ product.stock }}</div>
+      <div class="col-md-4">
+        <strong>Activo:</strong>
+        <span class="badge ms-1" [ngClass]="product.activo ? 'text-bg-success' : 'text-bg-secondary'">
+          {{ product.activo ? 'Sí' : 'No' }}
+        </span>
+      </div>
+      <div class="col-md-4"><strong>Fecha ingreso:</strong> {{ product.fechaIngreso | date : 'dd/MM/yyyy' }}</div>
+      <div class="col-md-4"><strong>Actualizado:</strong> {{ product.updatedAt | date : 'dd/MM/yyyy HH:mm' }}</div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a class="btn btn-warning" [routerLink]="['/productos/editar', product._id]">Editar</a>
+  </div>
+</div>
+
+<div *ngIf="previewImage" class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.75); z-index: 2000" (click)="closePreview()">
+  <div class="bg-white p-2 rounded" style="max-width: 90vw; max-height: 90vh" (click)="$event.stopPropagation()">
+    <div class="d-flex justify-content-end mb-2 px-2">
+      <button class="btn btn-sm btn-outline-dark" (click)="closePreview()">Cerrar</button>
+    </div>
+    <img [src]="previewImage" [alt]="product?.nombre || 'preview'" class="img-fluid rounded" style="max-height: 80vh; object-fit: contain" />
+  </div>
+</div>
