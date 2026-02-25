@@ -219,29 +219,27 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 
 ## 16) Pasos de despliegue (rápido)
 
+Prerequisito:
+- Tener el proyecto subido a GitHub para conectarlo desde Render y Vercel.
+- Este repositorio ya incluye configuración lista: `render.yaml`, `frontend-react/vercel.json` y `frontend-angular/vercel.json`.
+
 ### 16.1 Backend en Render
-1. Subir repo a GitHub.
-2. Crear Web Service en Render apuntando a `backend/`.
-3. Configurar:
-  - Build Command: `npm install`
-  - Start Command: `npm start`
-4. Variables de entorno en Render:
-  - `PORT=4000`
+1. Crear **Web Service** desde este repo (Render detecta `render.yaml`).
+2. En variables de entorno, completar solo:
   - `MONGODB_URI=...`
-  - `NODE_ENV=production`
-5. Guardar URL pública del backend (`https://...render.com`).
+3. Deploy y guardar URL pública del backend (`https://...render.com`).
 
 ### 16.2 Frontend React en Vercel
 1. Importar proyecto en Vercel desde GitHub.
-2. Root Directory: `frontend-react`.
+2. Root Directory: `frontend-react` (Vercel usa `frontend-react/vercel.json`).
 3. Variable de entorno:
   - `VITE_API_BASE_URL=https://TU_BACKEND_RENDER/api/v1`
 4. Deploy y guardar URL pública.
 
 ### 16.3 Frontend Angular en Vercel
 1. Importar proyecto en Vercel desde GitHub.
-2. Root Directory: `frontend-angular`.
-3. Antes de deploy, editar `frontend-angular/src/environments/environment.ts` y poner:
+2. Root Directory: `frontend-angular` (Vercel usa `frontend-angular/vercel.json`).
+3. Antes de deploy, editar `frontend-angular/src/environments/environment.production.ts` y poner:
   - `apiBaseUrl: 'https://TU_BACKEND_RENDER/api/v1'`
 4. Deploy y guardar URL pública.
 
