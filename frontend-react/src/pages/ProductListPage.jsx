@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { deleteProduct, getProducts } from '../services/productsApi'
 import { getProductImage } from '../utils/productImage'
@@ -20,7 +20,11 @@ function ProductListPage() {
   const [activo, setActivo] = useState('')
   const [search, setSearch] = useState('')
 
-  const fetchProducts = async (targetPage = page) => {
+  const fetchProducts = useCallback(async (targetPage = 1, filters = {}) => {
+    const categoriaFilter = filters.categoria ?? categoria
+    const activoFilter = filters.activo ?? activo
+    const searchFilter = filters.search ?? search
+
     setLoading(true)
     setErrorMessage('')
 
@@ -28,9 +32,9 @@ function ProductListPage() {
       const response = await getProducts({
         page: targetPage,
         limit,
-        categoria,
-        activo,
-        search,
+        categoria: categoriaFilter,
+        activo: activoFilter,
+        search: searchFilter,
       })
 
       setProducts(response.data)
@@ -42,11 +46,11 @@ function ProductListPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [activo, categoria, limit, search])
 
   useEffect(() => {
     fetchProducts(1)
-  }, [])
+  }, [fetchProducts])
 
   const onFilter = () => {
     fetchProducts(1)
@@ -56,9 +60,7 @@ function ProductListPage() {
     setCategoria('')
     setActivo('')
     setSearch('')
-    setTimeout(() => {
-      fetchProducts(1)
-    }, 0)
+    fetchProducts(1, { categoria: '', activo: '', search: '' })
   }
 
   const onDelete = async (id) => {
