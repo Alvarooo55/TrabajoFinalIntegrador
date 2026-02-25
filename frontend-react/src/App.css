@@ -1,3 +1,20 @@
 #root {
   min-height: 100vh;
 }
+
+.topbar {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(90deg, #0f172a 0%, #1d4ed8 45%, #0ea5e9 100%);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+}
+
+.topbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.topbar .btn {
+  border: 0;
+  border-radius: 999px;
+  padding-inline: 0.95rem;
+}

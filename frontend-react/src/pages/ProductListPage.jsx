@@ -91,17 +91,32 @@ function ProductListPage() {
 
   return (
     <>
+      <section className="hero-block mb-4">
+        <div className="d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div>
+            <h1 className="h3 mb-1">Catálogo SportStock</h1>
+            <p className="hero-subtitle">Gestión inteligente de productos deportivos con control de stock y estado en tiempo real.</p>
+          </div>
+          <Link className="btn btn-light fw-semibold" to="/productos/nuevo">
+            + Nuevo producto
+          </Link>
+        </div>
+
+        <div className="d-flex flex-wrap gap-2 mt-3">
+          <span className="metric-chip">Registros: {total}</span>
+          <span className="metric-chip">Páginas: {totalPages}</span>
+          <span className="metric-chip">Página actual: {page}</span>
+        </div>
+      </section>
+
       <div className="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
-        <h1 className="h4 mb-0 text-primary">Productos</h1>
-        <Link className="btn btn-primary" to="/productos/nuevo">
-          + Nuevo producto
-        </Link>
+        <h2 className="h5 mb-0 text-primary">Productos</h2>
       </div>
 
       {successMessage && <div className="alert alert-success">{successMessage}</div>}
       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
 
-      <div className="card border-0 shadow-sm mb-3">
+      <div className="card pro-card mb-3">
         <div className="card-body">
           <div className="row g-2 align-items-end">
             <div className="col-md-4">
@@ -152,12 +167,12 @@ function ProductListPage() {
           <div className="spinner-border" role="status" />
         </div>
       ) : (
-        <div className="card border-0 shadow-sm">
+        <div className="card pro-card">
           <div className="card-body">
             <div className="row g-3">
               {products.map((product) => (
                 <div className="col-md-6 col-xl-4" key={product._id}>
-                  <div className="card h-100 border-0 shadow-sm">
+                  <div className="card h-100 product-card">
                     <button
                       className="btn p-0 border-0 bg-transparent"
                       onClick={() => openPreview(getProductImage(product), product.nombre)}
@@ -193,7 +208,7 @@ function ProductListPage() {
                         <span className="badge text-bg-light border">Stock: {product.stock}</span>
                       </div>
 
-                      <p className="card-text fw-semibold mb-3">
+                      <p className="card-text price-tag mb-3">
                         {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(product.precio)}
                       </p>
 
@@ -221,8 +236,8 @@ function ProductListPage() {
             </div>
           </div>
 
-          <div className="card-footer d-flex justify-content-between align-items-center">
-            <small>
+          <div className="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+            <small className="text-secondary fw-semibold">
               Registros: {total} | Páginas: {totalPages} | Página actual: {page}
             </small>
             <div className="btn-group">

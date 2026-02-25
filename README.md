@@ -253,3 +253,58 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 - Captura 4 — Listado de productos (React): pendiente
 - Captura 5 — Formulario crear/editar (React): pendiente
 - Captura 6 — Detalle de producto (React): pendiente
+
+## 18) Evidencia Postman (para anexar en la entrega)
+
+Exportar en Postman:
+- Collection: `SportStock API v1.postman_collection.json`
+- Environment (opcional): `SportStock Local.postman_environment.json`
+
+Solicitudes mínimas a evidenciar (captura + respuesta):
+- `GET /api/v1/productos/get/all?page=1&limit=6`
+- `GET /api/v1/productos/get/all?categoria=calzado&activo=true`
+- `GET /api/v1/productos/get/all?search=balon`
+- `GET /api/v1/productos/get/:id`
+- `POST /api/v1/productos/post`
+- `PUT /api/v1/productos/update/:id`
+- `PATCH /api/v1/productos/update/:id`
+- `DELETE /api/v1/productos/delete/:id`
+
+Evidencias recomendadas:
+- Caso exitoso por cada endpoint.
+- Caso de error de validación (por ejemplo, `activo=false` con `stock>0`).
+- Caso de error por ID inválido/no existente.
+
+## 19) Diagrama de colección (MongoDB)
+
+```mermaid
+erDiagram
+  PRODUCTO {
+    ObjectId _id PK
+    string nombre UK
+    string nombreNormalizado UK
+    string descripcion
+    number precio
+    date fechaIngreso
+    boolean activo
+    string categoria
+    number stock
+    date createdAt
+    date updatedAt
+  }
+```
+
+## 20) Cierre de entrega (último paso)
+
+Checklist final antes de enviar:
+- [ ] Backend desplegado (Render) y URL pública agregada en este README.
+- [ ] Frontend Angular desplegado y URL pública agregada en este README.
+- [ ] Frontend React desplegado y URL pública agregada en este README.
+- [ ] Capturas (Angular + React) anexadas.
+- [ ] Colección Postman exportada y anexada.
+- [ ] Evidencias de pruebas (éxito + error) anexadas.
+
+Estado técnico del código:
+- Backend: OK (arranca y responde).
+- Angular: OK (build exitoso).
+- React: OK (build exitoso).

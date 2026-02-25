@@ -7,15 +7,18 @@ import './App.css'
 function App() {
   return (
     <BrowserRouter>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark topbar">
         <div className="container">
           <Link className="navbar-brand" to="/productos">
-            SportStock React
+            SportStock · React
+          </Link>
+          <Link className="btn btn-sm btn-light fw-semibold" to="/productos/nuevo">
+            Nuevo producto
           </Link>
         </div>
       </nav>
 
-      <main className="container py-4">
+      <main className="container page-wrap">
         <Routes>
           <Route path="/" element={<Navigate to="/productos" replace />} />
           <Route path="/productos" element={<ProductListPage />} />

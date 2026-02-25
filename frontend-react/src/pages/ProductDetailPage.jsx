@@ -48,7 +48,7 @@ function ProductDetailPage() {
       {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
 
       {!loading && product && (
-        <div className="card border-0 shadow-sm">
+        <div className="card pro-card">
           <button className="btn p-0 border-0 bg-transparent" onClick={() => setPreviewImage(getProductImage(product))}>
             <img
               src={getProductImage(product)}
@@ -70,9 +70,9 @@ function ProductDetailPage() {
           </button>
           <div className="card-body">
             <h2 className="h5 mb-3 text-primary">{product.nombre}</h2>
-            <p className="mb-3">{product.descripcion}</p>
+            <p className="text-secondary mb-3">{product.descripcion}</p>
 
-            <div className="row g-3">
+            <div className="row g-3 text-secondary-emphasis">
               <div className="col-md-4">
                 <strong>Categoría:</strong> <span className="badge text-bg-info text-capitalize ms-1">{product.categoria}</span>
               </div>
@@ -98,7 +98,7 @@ function ProductDetailPage() {
             </div>
           </div>
 
-          <div className="card-footer">
+          <div className="card-footer bg-white border-0">
             <Link className="btn btn-warning" to={`/productos/editar/${product._id}`}>
               Editar
             </Link>

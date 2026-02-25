@@ -1,5 +1,107 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 body {
-	background-color: #f8f9fa;
+	background: radial-gradient(circle at top right, #e9f2ff 0%, #f8f9fa 45%, #ffffff 100%);
+	min-height: 100vh;
+	color: #1f2937;
+	font-feature-settings: 'ss01' on;
+	line-height: 1.45;
+}
+
+.topbar {
+	backdrop-filter: blur(8px);
+	background: linear-gradient(90deg, #0f172a 0%, #1d4ed8 45%, #0ea5e9 100%);
+	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+}
+
+.topbar .navbar-brand {
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+
+.topbar .btn {
+	border: 0;
+	border-radius: 999px;
+	padding-inline: 0.95rem;
+}
+
+.page-wrap {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+.btn {
+	border-radius: 0.7rem;
+	font-weight: 600;
+}
+
+.btn-sm {
+	border-radius: 0.6rem;
+}
+
+.form-control,
+.form-select,
+textarea.form-control {
+	border-radius: 0.7rem;
+	border-color: #dbe6ff;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+	border-color: #8ab4ff;
+	box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.16);
+}
+
+.form-label {
+	font-weight: 600;
+	color: #334155;
+}
+
+.hero-block {
+	background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 52%, #0284c7 100%);
+	color: #f8fafc;
+	border-radius: 1rem;
+	padding: 1.25rem;
+	box-shadow: 0 16px 28px rgba(15, 23, 42, 0.2);
+}
+
+.hero-subtitle {
+	opacity: 0.85;
+	margin-bottom: 0;
+}
+
+.metric-chip {
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 999px;
+	padding: 0.35rem 0.75rem;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.pro-card {
+	border: 0;
+	border-radius: 1rem;
+	box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.pro-card .card-footer {
+	padding-top: 0.95rem;
+	padding-bottom: 1rem;
+}
+
+.product-card {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+}
+
+.price-tag {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #1d4ed8;
 }

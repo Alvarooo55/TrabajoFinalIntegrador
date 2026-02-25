@@ -117,7 +117,7 @@ function ProductFormPage() {
   return (
     <>
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h1 className="h4 mb-0">{isEditMode ? 'Editar producto' : 'Crear producto'}</h1>
+        <h1 className="h4 mb-0 text-primary">{isEditMode ? 'Editar producto' : 'Crear producto'}</h1>
         <Link className="btn btn-outline-secondary" to="/productos">
           Volver
         </Link>
@@ -133,7 +133,7 @@ function ProductFormPage() {
       )}
 
       {!loading && (
-        <form className="card" onSubmit={handleSubmit}>
+        <form className="card pro-card" onSubmit={handleSubmit}>
           <div className="card-body">
             <div className="row g-3">
               <div className="col-md-6">
@@ -251,7 +251,7 @@ function ProductFormPage() {
             </div>
           </div>
 
-          <div className="card-footer d-flex justify-content-end gap-2">
+          <div className="card-footer bg-white border-0 d-flex justify-content-end gap-2">
             <Link className="btn btn-outline-secondary" to="/productos">
               Cancelar
             </Link>
