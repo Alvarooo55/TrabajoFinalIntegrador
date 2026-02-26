@@ -224,17 +224,17 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 - ✅ Frontend Angular completo (consumo API + CRUD + formularios reactivos + Bootstrap).
 - ✅ Frontend React completo (consumo API + CRUD + hooks + React Router + Bootstrap).
 - ✅ Documentación base de proyecto y endpoints.
-- ⏳ URL backend desplegado: pendiente de publicar.
-- ⏳ URL frontend Angular desplegado: pendiente de publicar.
-- ⏳ URL frontend React desplegado: pendiente de publicar.
+- ✅ URL backend desplegado: publicada.
+- ✅ URL frontend Angular desplegado: publicada.
+- ✅ URL frontend React desplegado: publicada.
 
 > Nota: el código queda finalizado en entorno local; para cerrar al 100% la entrega académica solo falta publicar las tres URLs de despliegue.
 
 ## 15) URLs de despliegue
 
-- Backend desplegado: `https://TU-BACKEND.vercel.app`
-- Frontend Angular desplegado: `https://TU-ANGULAR.vercel.app`
-- Frontend React desplegado: `https://TU-REACT.vercel.app`
+- Backend desplegado: `https://trabajo-final-integrador-one.vercel.app`
+- Frontend Angular desplegado: `https://trabajo-final-integrador-2nsz.vercel.app`
+- Frontend React desplegado: `https://trabajo-final-integrador-7pgx.vercel.app`
 
 ## 16) Pasos de despliegue (rápido)
 
@@ -253,14 +253,14 @@ Prerequisito:
 1. Importar proyecto en Vercel desde GitHub.
 2. Root Directory: `frontend-react` (Vercel usa `frontend-react/vercel.json`).
 3. Variable de entorno:
-  - `VITE_API_BASE_URL=https://TU_BACKEND_VERCEL/api/v1`
+  - `VITE_API_BASE_URL=https://trabajo-final-integrador-one.vercel.app/api/v1`
 4. Deploy y guardar URL pública.
 
 ### 16.3 Frontend Angular en Vercel
 1. Importar proyecto en Vercel desde GitHub.
 2. Root Directory: `frontend-angular` (Vercel usa `frontend-angular/vercel.json`).
 3. Variable de entorno en Vercel:
-  - `NG_APP_API_BASE_URL=https://TU_BACKEND_VERCEL/api/v1`
+  - `NG_APP_API_BASE_URL=https://trabajo-final-integrador-one.vercel.app/api/v1`
 4. El build inyecta automáticamente esa URL en `environment.production.ts`.
 5. Deploy y guardar URL pública.
 
@@ -318,9 +318,9 @@ erDiagram
 ## 20) Cierre de entrega (último paso)
 
 Checklist final antes de enviar:
-- [ ] Backend desplegado (Render) y URL pública agregada en este README.
-- [ ] Frontend Angular desplegado y URL pública agregada en este README.
-- [ ] Frontend React desplegado y URL pública agregada en este README.
+- [x] Backend desplegado y URL pública agregada en este README.
+- [x] Frontend Angular desplegado y URL pública agregada en este README.
+- [x] Frontend React desplegado y URL pública agregada en este README.
 - [ ] Capturas (Angular + React) anexadas.
 - [ ] Colección Postman exportada y anexada.
 - [ ] Evidencias de pruebas (éxito + error) anexadas.
