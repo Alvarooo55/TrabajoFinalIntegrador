@@ -232,34 +232,35 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 
 ## 15) URLs de despliegue
 
-- Backend desplegado: `https://TU-BACKEND.onrender.com`
+- Backend desplegado: `https://TU-BACKEND.vercel.app`
 - Frontend Angular desplegado: `https://TU-ANGULAR.vercel.app`
 - Frontend React desplegado: `https://TU-REACT.vercel.app`
 
 ## 16) Pasos de despliegue (rápido)
 
 Prerequisito:
-- Tener el proyecto subido a GitHub para conectarlo desde Render y Vercel.
-- Este repositorio ya incluye configuración lista: `render.yaml`, `frontend-react/vercel.json` y `frontend-angular/vercel.json`.
+- Tener el proyecto subido a GitHub para conectarlo desde Vercel.
+- Este repositorio ya incluye configuración lista: `backend/vercel.json`, `frontend-react/vercel.json` y `frontend-angular/vercel.json`.
 
-### 16.1 Backend en Render
-1. Crear **Web Service** desde este repo (Render detecta `render.yaml`).
-2. En variables de entorno, completar solo:
-  - `MONGODB_URI=...`
-3. Deploy y guardar URL pública del backend (`https://...render.com`).
+### 16.1 Backend en Vercel
+1. Importar proyecto en Vercel desde GitHub.
+2. Root Directory: `backend`.
+3. Variable de entorno:
+  - `MONGODB_URI=mongodb+srv://...`
+4. Deploy y guardar URL pública del backend (`https://...vercel.app`).
 
 ### 16.2 Frontend React en Vercel
 1. Importar proyecto en Vercel desde GitHub.
 2. Root Directory: `frontend-react` (Vercel usa `frontend-react/vercel.json`).
 3. Variable de entorno:
-  - `VITE_API_BASE_URL=https://TU_BACKEND_RENDER/api/v1`
+  - `VITE_API_BASE_URL=https://TU_BACKEND_VERCEL/api/v1`
 4. Deploy y guardar URL pública.
 
 ### 16.3 Frontend Angular en Vercel
 1. Importar proyecto en Vercel desde GitHub.
 2. Root Directory: `frontend-angular` (Vercel usa `frontend-angular/vercel.json`).
 3. Variable de entorno en Vercel:
-  - `NG_APP_API_BASE_URL=https://TU_BACKEND_RENDER/api/v1`
+  - `NG_APP_API_BASE_URL=https://TU_BACKEND_VERCEL/api/v1`
 4. El build inyecta automáticamente esa URL en `environment.production.ts`.
 5. Deploy y guardar URL pública.
 
