@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
+const connectDB = async ({ exitOnError = true } = {}) => {
   try {
     const uri = process.env.MONGODB_URI;
     if (!uri) {
@@ -11,7 +11,11 @@ const connectDB = async () => {
     console.log('MongoDB conectado correctamente');
   } catch (error) {
     console.error('Error de conexión a MongoDB:', error.message);
-    process.exit(1);
+    if (exitOnError) {
+      process.exit(1);
+    }
+
+    throw error;
   }
 };
 
