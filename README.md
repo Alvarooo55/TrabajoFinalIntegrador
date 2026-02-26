@@ -12,12 +12,12 @@ Estructura incluida en este repositorio:
 - ✅ Descripción del proyecto
 - ✅ Reglas de negocio
 - ✅ Endpoints
-- ⏳ URL de la API desplegada
-- ⏳ URL de frontend Angular desplegado
-- ⏳ URL de frontend React desplegado
+- ✅ URL de la API desplegada
+- ✅ URL de frontend Angular desplegado
+- ✅ URL de frontend React desplegado
 - ⏳ Capturas de pantalla
 
-> Para cerrar la entrega al 100%, solo falta completar las URLs públicas y adjuntar capturas en `docs/screenshots/`.
+> Para cerrar la entrega al 100%, solo falta adjuntar capturas en `docs/screenshots/`.
 
 ## 1) Nombre del proyecto
 **SportStock**
@@ -228,7 +228,7 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 - ✅ URL frontend Angular desplegado: publicada.
 - ✅ URL frontend React desplegado: publicada.
 
-> Nota: el código queda finalizado en entorno local; para cerrar al 100% la entrega académica solo falta publicar las tres URLs de despliegue.
+> Nota: backend y frontends ya están desplegados; solo faltan capturas y evidencias finales.
 
 ## 15) URLs de despliegue
 
