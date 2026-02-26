@@ -1,5 +1,24 @@
 # Proyecto Final Integrador — SportStock (Productos Deportivos)
 
+## 📦 Entrega Final
+
+### Código (Repositorio GitHub)
+Estructura incluida en este repositorio:
+- `backend/`
+- `frontend-angular/`
+- `frontend-react/`
+
+### Documentación incluida en este README
+- ✅ Descripción del proyecto
+- ✅ Reglas de negocio
+- ✅ Endpoints
+- ⏳ URL de la API desplegada
+- ⏳ URL de frontend Angular desplegado
+- ⏳ URL de frontend React desplegado
+- ⏳ Capturas de pantalla
+
+> Para cerrar la entrega al 100%, solo falta completar las URLs públicas y adjuntar capturas en `docs/screenshots/`.
+
 ## 1) Nombre del proyecto
 **SportStock**
 
@@ -213,9 +232,9 @@ Se implementó un cliente React en `frontend-react/` que consume la misma API de
 
 ## 15) URLs de despliegue
 
-- Backend desplegado: pendiente
-- Frontend Angular desplegado: pendiente
-- Frontend React desplegado: pendiente
+- Backend desplegado: `https://TU-BACKEND.onrender.com`
+- Frontend Angular desplegado: `https://TU-ANGULAR.vercel.app`
+- Frontend React desplegado: `https://TU-REACT.vercel.app`
 
 ## 16) Pasos de despliegue (rápido)
 
@@ -245,12 +264,14 @@ Prerequisito:
 
 ## 17) Capturas de pantalla
 
-- Captura 1 — Listado de productos (Angular): pendiente
-- Captura 2 — Formulario crear/editar (Angular): pendiente
-- Captura 3 — Detalle de producto (Angular): pendiente
-- Captura 4 — Listado de productos (React): pendiente
-- Captura 5 — Formulario crear/editar (React): pendiente
-- Captura 6 — Detalle de producto (React): pendiente
+Guardar archivos en: `docs/screenshots/`
+
+- Captura 1 — Listado de productos (Angular): `docs/screenshots/angular-listado.png`
+- Captura 2 — Formulario crear/editar (Angular): `docs/screenshots/angular-formulario.png`
+- Captura 3 — Detalle de producto (Angular): `docs/screenshots/angular-detalle.png`
+- Captura 4 — Listado de productos (React): `docs/screenshots/react-listado.png`
+- Captura 5 — Formulario crear/editar (React): `docs/screenshots/react-formulario.png`
+- Captura 6 — Detalle de producto (React): `docs/screenshots/react-detalle.png`
 
 ## 18) Evidencia Postman (para anexar en la entrega)
 
