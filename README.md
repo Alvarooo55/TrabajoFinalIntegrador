@@ -258,9 +258,10 @@ Prerequisito:
 ### 16.3 Frontend Angular en Vercel
 1. Importar proyecto en Vercel desde GitHub.
 2. Root Directory: `frontend-angular` (Vercel usa `frontend-angular/vercel.json`).
-3. Antes de deploy, editar `frontend-angular/src/environments/environment.production.ts` y poner:
-  - `apiBaseUrl: 'https://TU_BACKEND_RENDER/api/v1'`
-4. Deploy y guardar URL pública.
+3. Variable de entorno en Vercel:
+  - `NG_APP_API_BASE_URL=https://TU_BACKEND_RENDER/api/v1`
+4. El build inyecta automáticamente esa URL en `environment.production.ts`.
+5. Deploy y guardar URL pública.
 
 ## 17) Capturas de pantalla
 
