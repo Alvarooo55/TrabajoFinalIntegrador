@@ -63,18 +63,16 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-productSchema.pre('validate', function normalizeName(next) {
+productSchema.pre('validate', function normalizeName() {
   if (this.nombre) {
     this.nombreNormalizado = this.nombre.trim().toLowerCase();
   }
-  next();
 });
 
-productSchema.pre('save', function validateBusinessRules(next) {
+productSchema.pre('save', function validateBusinessRules() {
   if (this.activo === false && this.stock > 0) {
-    return next(new Error('Un producto inactivo debe tener stock igual a 0'));
+    throw new Error('Un producto inactivo debe tener stock igual a 0');
   }
-  next();
 });
 
 const Product = mongoose.model('Product', productSchema);
